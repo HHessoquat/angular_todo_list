@@ -1,0 +1,9 @@
+<header>
+  <ul>
+    @for (link of links; track $index) {
+      @if(!link.authorization || (link.authorization !== "ADMIN" && isAdmin === true)) {
+          <li><a routerLink="{{link.path}}}"> {{ link.label }}</a></li>
+      }
+    }
+  </ul>
+</header>

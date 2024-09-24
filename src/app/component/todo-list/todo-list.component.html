@@ -1,0 +1,23 @@
+<main>
+    <div id="todoContainer">
+        <h1>{{ title }}</h1>
+        @for (task of tasks | async; track task.id) {
+            <div class="taskContainer">
+                <div class="inputContainer">
+                    <input type="checkbox"
+                           [checked]="task.completed"
+                           (change)="toggleCompletion(task.id)">
+                    <label>{{ task.label }}</label>
+                </div>
+                <button class="deleteBtn" (click)="deleteTask(task.id)" >Supprimer</button>
+            </div>
+    }</div>
+
+    <div id="newTaskContainer">
+        <form class="newTaskForm" [formGroup]="newTaskForm" (ngSubmit)="addTask()">
+
+            <input type="text" formControlName="newTask" placeholder="nouvelle tâche">
+            <button type="submit">ajouter</button>
+        </form>
+    </div>
+</main>

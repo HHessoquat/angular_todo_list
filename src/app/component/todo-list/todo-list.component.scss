@@ -1,0 +1,69 @@
+$pink: #EE00DD;
+$purple: #AA00FF;
+$predanger: #FF0060;
+$danger: #800000;
+
+#todoContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000015;
+    border-radius: 10px;
+    border: 2px $pink solid;
+    padding: 3em;
+
+    .taskContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+    }
+    .inputContainer{
+        display: flex;
+        gap: 1.2em;
+    }
+    .deleteBtn {
+        background-color: $predanger;
+        border-radius: 15px;
+        color: #FFF;
+        padding: 0.4em;
+        margin: 0.3em 0;
+        border: 1px solid #000;
+        transition: 0.2s transform ease-in-out;
+
+        &:hover {
+            background-color: $danger;
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+#newTaskContainer {
+    margin-top: 1.5em;
+
+    .newTaskForm {
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+
+    input[type="text"] {
+        border: 2px $pink solid;
+        border-radius: 10px;
+        text-align: center;
+        &:focus {
+            outline: 3px solid $purple;
+        }
+    }
+
+
+    button{
+        border: 2px $purple solid;
+        border-radius: 10px;
+        padding: 0.5em;
+        font-weight: bold;
+    }
+
+}
